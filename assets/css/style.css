@@ -1,0 +1,33 @@
+.container {
+    
+}
+h1 { font-size: 22pt;
+    text-align: center; 
+}
+
+#time {font-size: 22pt;
+        text-align: center;
+        padding: 50px;
+}
+
+header { font-style: bold;
+    
+}
+
+#question {
+        font-size: 30px;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: black;
+        color: white;
+
+}
+.btn, .btn1, .btn2, .btn3 { margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 45%;
+        margin: auto;
+        height: 50px;
+        }
+
