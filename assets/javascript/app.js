@@ -104,6 +104,63 @@ $(".start").click(function () {
 
 // create onclick event and if/else statements for choices
 
+var userSelect = "";
+userSelect = 2
+
+
+if (triviaQues[0].correct[2] === userSelect); {
+  correct++;
+  $(".win").text(correct);
+  $(".win").html("Wins: " + correct);
+  console.log(userSelect);
+}
+
+if (triviaQues[1].correct[2] === userSelect); {
+  correct++;
+  $(".win").text(correct);
+  $(".win").html("Wins: " + correct);
+  console.log(userSelect);
+}
+
+if (triviaQues[2].correct[0] === userSelect); {
+  correct++;
+  $(".win").text(correct);
+  $(".win").html("Wins: " + correct);
+  console.log(userSelect);
+}
+
+if (triviaQues[3].correct[2] === userSelect); {
+  correct++;
+  $(".win").text(correct);
+  $(".win").html("Wins: " + correct);
+  console.log(userSelect);
+}
+
+if (triviaQues[4].correct[2] === userSelect); {
+  correct++;
+  $(".win").text(correct);
+  $(".win").html("Wins: " + correct);
+  console.log(userSelect);
+}
+
+if (triviaQues[5].correct[1] === userSelect); {
+  correct++;
+  $(".win").text(correct);
+  $(".win").html("Wins: " + correct);
+  console.log(userSelect);
+}
+console.log(userSelect);
+
+// else if (triviaQues[5].correct[1] !== userSelect); {
+//   correct++;
+//   $(".loss").text(incorrect);
+//   $(".loss").html("Losses: " + incorrect);
+//   console.log(userSelect);
+// }
+
+
+
+
 // for (var i = 0; i < triviaQues.question.correct.length; i++)
 
 // $(".buttonChoice").click(function() {
