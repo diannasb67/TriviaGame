@@ -20,14 +20,25 @@ header { font-style: bold;
         padding: 10px;
         margin-top: 20px;
         background-color: black;
-        color: white;
+        color: white;   
 
 }
-.btn, .btn1, .btn2, .btn3 { margin-top: 50px;
+.btn0, .btn1, .btn2, .btn3 { margin-top: 50px;
         display: grid;
         grid-template-columns: 1fr;
         width: 45%;
         margin: auto;
         height: 50px;
         }
+.btn { 
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 45%;
+        margin: auto;
+        height: 50px;
+        margin-left: 25%;
+        
 
+
+}

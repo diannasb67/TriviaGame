@@ -69,24 +69,13 @@ correct: 1},
 //display question to user
 
 $("#question").each(function() {
-
     var ques = triviaQues[0].question;
-    
     $("#question").append(ques);
-
-    console.log(ques);  
+     console.log(ques);  
 })
 
 
-  
-
 //display choices to user
-
-// var quest = triviaQues[0].question[i];  
-// console.log(quest);
-
-// $(".question").html(quest);
-
 
 var choice1 = triviaQues[0].choices[0];
 var choice2 = triviaQues[0].choices[1];
@@ -95,7 +84,7 @@ var choice4 = triviaQues[0].choices[3];
 console.log(triviaQues[0].choices[0]);
 
 
-$(".btn").text(choice1);
+$(".btn0").text(choice1);
 $(".btn1").text(choice2); 
 $(".btn2").text(choice3); 
 $(".btn3").text(choice4);      
@@ -105,28 +94,26 @@ $(".btn3").text(choice4);
 // create a timer that counts down and display it using jquery
 // $(".timer").html("Time Remaining " + "00" + counterStart + " seconds");
 
-// function startTimer(duration, display) {
-//     var timer = duration, minutes, seconds;
-//     setInterval(function () {
-//         minutes = parseInt(timer / 60, 10);
-//         seconds = parseInt(timer % 60, 10);
 
-//         minutes = minutes < 10 ? "0" + minutes : minutes;
-//         seconds = seconds < 10 ? "0" + seconds : seconds;
+$(".start").click( function(){
+    var counter = 30;
+    setInterval(function() {
+      counter--;
+       if (counter >= 0) {
+          span = document.getElementById("time");
+          span.innerHTML = counter;
+       }
+       if (counter === 0) {
+         
+          clearInterval(counter);
+        }
+      }, 1000);
+      console.log(counter); 
+ });
+ 
 
-//         display.text(minutes + ":" + seconds);
 
-//         if (--timer < 0) {
-//             timer = duration;
-//         }
-//     }, 1000);
-// }
-
-// jQuery(function ($) {
-//     var fiveMinutes = 60 * 5,
-//         display = $('#time');
-//     startTimer(fiveMinutes, display);
-// });
+ 
 // create if/else statements
 // 
 // create a var counter for corrrect, incorrect and unasnwered questions.
