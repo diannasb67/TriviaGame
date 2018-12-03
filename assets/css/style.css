@@ -1,5 +1,5 @@
 body {
-        background-image: url(https://cdn.pixabay.com/photo/2016/12/15/14/32/question-mark-background-1909040_960_720.png);
+        background-image: url("https://cdn.pixabay.com/photo/2013/03/25/07/08/question-mark-96600_960_720.jpg"); 
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-position: center;
@@ -17,7 +17,7 @@ footer { background-color: black;
         opacity: .98;
         height: 100%;
         padding: 10px;
-        margin-top: 5%;
+        margin-top: 3%;
 }
 
 h2 { font-size: 22pt;
