@@ -1,17 +1,51 @@
-.container {
-    
+body {
+        background-image: url(https://cdn.pixabay.com/photo/2016/12/15/14/32/question-mark-background-1909040_960_720.png);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 20%;
 }
-h1 { font-size: 22pt;
+
+footer { background-color: black; 
+        color: white;
+        text-align: center;
+}
+
+.container { 
+        background-color: grey;
+        opacity: .98;
+        height: 100%;
+        padding: 10px;
+        margin-top: 5%;
+}
+
+h2 { font-size: 22pt;
     text-align: center; 
+    height: 80px;
+    padding: 20px;
+}
+
+#timeRemain {font-size: 22pt;
+        text-align: center;
+        padding: 10px;
+        padding-bottom: 20px;
+        color: white;
 }
 
 #time {font-size: 22pt;
         text-align: center;
-        padding: 50px;
+        padding: 10px;
+        color: white;
 }
 
 header { font-style: bold;
-    
+        background-color: black;
+        color: white;   
+}
+
+.buttonContain {
+        padding-bottom: 20px;
 }
 
 #question {
@@ -23,6 +57,7 @@ header { font-style: bold;
         color: white;   
 
 }
+
 .btn0, .btn1, .btn2, .btn3 { margin-top: 50px;
         display: grid;
         grid-template-columns: 1fr;
@@ -30,6 +65,7 @@ header { font-style: bold;
         margin: auto;
         height: 50px;
         }
+
 .btn { 
         margin-top: 50px;
         display: grid;
@@ -38,7 +74,31 @@ header { font-style: bold;
         margin: auto;
         height: 50px;
         margin-left: 25%;
-        
+}
 
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 
 }
