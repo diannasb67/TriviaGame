@@ -27,76 +27,98 @@ var triviaQues = [
   {
     question: "Which is the only American state to begin with the letter p?",
     choices: ["Pittsburgh", "Pennsylvania", "Park-City", "Puerto-Rico"],
-    correct: 2
+    correct: "Pennsylvania"
   },
   {
     question: "Name the worlds largest ocean?",
     choices: ["Atlantic", "Indian", "Pacific", "Arctic"],
-    correct: 2
+    correct: "Pacific"
   },
   {
     question: "What is the capital of Spain?",
     choices: ["Madrid", "Barcelona", "Seville", "Granada"],
-    correct: 0
+    correct: "Madrid"
   },
   {
     question: "What is the smallest country in the world at only 44 sq.km",
     choices: ["Hati", "St. Lucia", "Vatican City", "Estonia"],
-    correct: 2
+    correct: "Vatican City"
   },
   {
     question: "What is the worlds biggest island",
     choices: ["Madagascar", "Australia", "Greenland", "Indonesia"],
-    correct: 2
+    correct: "Greenland"
   },
   {
     question: "Where would yoou find the worlds most ancient forest?",
     choices: ["Heidleburg, Germany", "Carines, Australia", "Salzburg, Austria", "Bogota, Columbia"],
-    correct: 1
+    correct: "Carines, Australia"
   },
 ]
 
-//display question to user
+var index = 0
 
-$("#question").each(function () {
-  var ques = triviaQues[0].question;
-  $("#question").append(ques);
-  console.log(ques);
-})
+function displayNextQuestion () { 
+  
+  
+  $("#buttonContain").empty();
 
-
-//display choices to user
-
-var choice1 = triviaQues[0].choices[0];
-var choice2 = triviaQues[0].choices[1];
-var choice3 = triviaQues[0].choices[2];
-var choice4 = triviaQues[0].choices[3];
-console.log(triviaQues[0].choices[0]);
+  //display question to user
+  $("#question").html(triviaQues[index].question)
+    
 
 
-$(".btn0").text(choice1);
-$(".btn1").text(choice2);
-$(".btn2").text(choice3);
-$(".btn3").text(choice4);
+  //display choices to user
+  for (var i = 0; i < triviaQues[index].choices.length; i++){
+    var newChoice = $('<button>')
+    newChoice.text(triviaQues[index].choices[i])
+    newChoice.addClass('buttonChoice').addClass('btn1')
+    $('#buttonContain').append(newChoice)
+  }
+}
+
+function endGame () {
+  var gameEnd = $("<div>").html("GAME OVER");
+      gameEnd.id('gameEnd');
+    }
+
+    console.log(endGame)
+
+displayNextQuestion();
 
 
 
 // create and display a timer that counts down
 
+function setImageSource(imageId, imageSrc) {
+  $('#buttonContain' + imageId).attr('src', imageSrc);
+}
+
+
 $(".start").click(function () {
   var counter = 30;
-   setInterval(function () {
-    counter--;
+
+  setTimeout(function(){ 
     
+    // alert("Time Out!"); }, 31000);
+    $("#time").html("Time Out!"); }, 31000);
+
+
+     setInterval(function () {
+    counter--;
+
     if (counter >= 0) {
       span = document.getElementById("time")
       span.innerHTML = counter;
     }
 
     if (counter === 0) {
-
+      endGame;
       clearInterval(counter);
+      
     }
+
+    
   }, 1000);
   console.log(counter);
 });
@@ -104,52 +126,49 @@ $(".start").click(function () {
 
 // create onclick event and if/else statements for choices
 
-var userSelect = "";
-userSelect = 2
 
 
-if (triviaQues[0].correct[2] === userSelect); {
-  correct++;
-  $(".win").text(correct);
-  $(".win").html("Wins: " + correct);
-  console.log(userSelect);
-}
 
-if (triviaQues[1].correct[2] === userSelect); {
-  correct++;
-  $(".win").text(correct);
-  $(".win").html("Wins: " + correct);
-  console.log(userSelect);
-}
+//onclick with increments to next question.
 
-if (triviaQues[2].correct[0] === userSelect); {
-  correct++;
-  $(".win").text(correct);
-  $(".win").html("Wins: " + correct);
-  console.log(userSelect);
-}
+$("#buttonContain").on("click", ".buttonChoice", function() {
+  var userSelect = $(this).text();
+  
+  if (triviaQues[index].correct === userSelect)  {
+    correct++;
+    $(".correct").text(correct);
+    $(".correct").html("Correct: " + correct);
+    alert("Correct!!");
 
-if (triviaQues[3].correct[2] === userSelect); {
-  correct++;
-  $(".win").text(correct);
-  $(".win").html("Wins: " + correct);
-  console.log(userSelect);
-}
+  }
+  
+  else {  
+    incorrect++;
+    $(".incorrect").text(incorrect);
+    $(".incorrect").html("Incorrect: " + incorrect);
+    alert("Incorrect!!");
+   }
 
-if (triviaQues[4].correct[2] === userSelect); {
-  correct++;
-  $(".win").text(correct);
-  $(".win").html("Wins: " + correct);
-  console.log(userSelect);
-}
+   index++
+   if(index===triviaQues.length) {
+      alert("GAME OVER");
+      $("#question").html("GAME OVER");
+      $("#buttonContain").empty();
 
-if (triviaQues[5].correct[1] === userSelect); {
-  correct++;
-  $(".win").text(correct);
-  $(".win").html("Wins: " + correct);
-  console.log(userSelect);
-}
-console.log(userSelect);
+
+      
+   }
+   else { 
+    
+    displayNextQuestion(); 
+   }
+
+   
+
+  console.log(userSelect);  
+})
+
+
 
 // else if (triviaQues[5].correct[1] !== userSelect); {
 //   correct++;
